@@ -1,0 +1,35 @@
+{% include 'laboratory_header.html' %}
+{% include 'sub_header.html' %}
+<center><br>
+	{% if data['view']%}
+	<h1>Pet Details</h1><br>
+	<form>
+		<table class="table">
+			<tr>
+				<th>Sl.No</th>
+				<th>Name</th>
+				<th>Phone</th>
+				<th>Email</th>
+				<th>Pet Name</th>
+				<th>Type</th>
+				<th>Breed</th>
+				<th></th>
+			</tr>
+			{% for i in data['view'] %}
+			<tr>
+				<td>{{loop.index}}</td>
+				<td>{{i['uname']}}</td>
+				<td>{{i['phone']}}</td>
+				<td>{{i['email']}}</td>
+				<td>{{i['name']}}</td>
+				<td>{{i['type']}}</td>
+				<td>{{i['breed']}}</td>
+				<td><a href="laboratory_view_prescribed_test?pid={{i['user_id']}}">View Prescribed test</a></td>
+			</tr>
+			{% endfor %}
+		</table>
+	</form><br><br>
+	{% else %}<br><br><h1>No Pets</h1><br><br>{% endif %}
+</center>
+{% include 'sub_footer.html' %}
+{% include 'footer.html' %}

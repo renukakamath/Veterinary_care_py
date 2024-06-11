@@ -1,0 +1,28 @@
+{% include 'doctor_header.html' %}
+{% include 'sub_header.html' %}
+<center><br>
+	<h1>Patient Physical Condition</h1><br><br>
+{% if data['msgs'] %}
+
+<table class="table">
+	<tr>
+		<th>Sl.No</th>
+		<th>Patient Name</th>
+		<td></td>
+	</tr>
+	{% for row in data['msgs'] %}
+	<tr>
+		<td>{{ loop.index }}</td>
+		<td>{{ row['name'] }}</td>
+		<td><a class="btn btn-info" href="doctor_view_physical_condition?cid={{row['patient_id']}}">Physical Condition</a></td>
+	</tr>
+	{% endfor %}
+</table>
+{% else %}
+<br>
+<h3>You don't have messages yet</h3>
+<br>
+{% endif %}
+</center>
+{% include 'sub_footer.html' %}
+{% include 'footer.html' %}

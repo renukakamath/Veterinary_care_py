@@ -1,0 +1,44 @@
+{% include 'admin_header.html' %}
+{% include 'sub_header.html' %}
+<center>
+	<h1>Assign Pet Details</h1><br>
+	<form method="post">
+		<table>
+			<tr>
+				<th>Select Staff</th>
+				<td><select class="form-control" required name="staff">
+					{% for r in data['view'] %}
+					<option value="{{r['staff_id']}}">{{r['fname']}}</option>
+					{% endfor %}
+				</select></td>
+			</tr>
+			
+			<tr><td><br></td></tr>
+			<tr>
+				<td colspan=2 align="center"><input class="btn btn-primary" type="submit" name="submit" value="Assign"></td>
+			</tr>
+		</table>
+	</form>
+	<br><br>
+	{% if data['staff'] %}
+	<h2>Assign Details</h2><br>
+	<table class="table">
+		<tr>
+			<th>Sl.No</th>
+			<th>Staff Name</th>
+			<th>Date</th>
+			
+			<th>Status</th><th></th>
+		</tr>
+		{% for i in data['staff'] %}
+		<tr>
+			<td>{{loop.index}}</td>
+			<td>{{i['fname']}} {{i['lname']}}</td>
+			<td>{{i['date']}}</td>
+			<td>{{i['status']}}</td>
+		</tr>
+		{% endfor %}
+	</table>{% endif %}
+</center>
+{% include 'sub_footer.html' %}
+{% include 'footer.html' %}

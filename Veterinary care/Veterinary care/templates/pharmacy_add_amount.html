@@ -1,0 +1,50 @@
+{% include 'pharmacy_header.html' %}
+{% include 'sub_header.html' %}
+<form  method="post">
+<center>
+{% if data['book_ids'] %}
+
+
+
+	
+<table class="table" style="width : 800px;">
+    <h1>Payment Details</h1>
+    <tr>
+        <th>Amount</th>
+        <th>Payment Type</th>
+        <th>Payment Date</th>
+        <th>Status</th>
+        
+    </tr>
+    {% for row in data['book_ids'] %}
+    <tr>
+        <td>{{ row['amount'] }}</td>
+        <td>{{ row['payment_type'] }}</td>
+        <td>{{ row['payment_date'] }}</td>
+        <td>{{ row['status'] }}</td>
+        
+    </tr>
+    {% endfor %}
+</table>
+
+
+{% else %}
+
+
+<table class="table" style="width: 500px;">
+    <h1>Payment Details</h1>
+    <tr>
+        <th>Amount</th>
+        <td><input type="text" class="form-control" name="amount" id=""></td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center"><input type="submit" class="btn btn-success" name="md_amount"  value="SEND" id=""></td>
+    </tr>
+</table>
+
+
+{% endif  %}
+</center>
+</form>
+{% include 'sub_footer.html' %}
+{% include 'footer.html' %} 

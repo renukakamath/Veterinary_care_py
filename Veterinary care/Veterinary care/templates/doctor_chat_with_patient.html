@@ -1,0 +1,30 @@
+{% include 'doctor_header.html' %}
+{% include 'sub_header.html' %}
+<center><br>
+	<h1>Messages</h1><br>
+{% if data['msgs'] %}
+
+<table class="table">
+	<tr>
+		<th>Sl.No</th>
+		<th>User Name</th>
+		<th>Pet Name</th>
+		<td></td>
+	</tr>
+	{% for row in data['msgs'] %}
+	<tr>
+		<td>{{ loop.index }}</td>
+		<td>{{ row['uname'] }}</td>
+		<td>{{ row['name'] }}</td>
+		<td><a href="doctor_chat_message?cid={{row['user_id']}}">Message</a></td>
+	</tr>
+	{% endfor %}
+</table>
+{% else %}
+<br>
+<h3>You don't have messages yet</h3>
+<br>
+{% endif %}
+</center>
+{% include 'sub_footer.html' %}
+{% include 'footer.html' %}

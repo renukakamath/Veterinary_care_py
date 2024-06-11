@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/primary"
+    tools:context=".Users_home">
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginLeft="20dp"
+        android:textStyle="bold|italic"
+        android:layout_height="wrap_content"
+        android:text="User Home" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:id="@+id/btpets"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Manage Pets" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:id="@+id/btvpets"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Pets" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:id="@+id/btdoctor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Doctors" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:id="@+id/btbookings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Bookings" />
+
+<!--    <androidx.appcompat.widget.AppCompatButton-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:background="@color/white"-->
+<!--        android:textStyle="bold"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:id="@+id/btmedhistory"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Medical History" />-->
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:id="@+id/bookvaccination"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Book Vaccination" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:id="@+id/bookstaff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Book Staff" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:id="@+id/viewproduct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Book Product" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/white"
+        android:background="#FF0000"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:id="@+id/btlogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Logout" />
+</LinearLayout>

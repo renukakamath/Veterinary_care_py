@@ -1,0 +1,36 @@
+{% include 'laboratory_header.html' %}
+{% include 'sub_header.html' %}
+<center>
+<br>
+{% if data['view'] %}
+<br>
+<h2>Test Details</h2><br>
+<table class="table">
+	<tr>
+		<th>Sl.No</th>
+		<th>Test Name</th>
+		<th>Pet Name</th>
+		<th>Doctor Description</th>
+		<th>Lab Description</th>
+		<th>Date Time</th>
+	</tr>
+	{% for i in data['view'] %}
+	<tr>
+		<td>{{loop.index}}</td>
+		<td>{{i['test_name']}}</td>
+		<td>{{i['name']}}</td>
+		<td>{{i['lab_pres_description']}}</td>
+		<td>{{i['report_description']}}</td>
+		<td>{{i['date_time']}}</td>
+	</tr>
+	{% endfor %}
+</table>
+{% else %}
+<br>
+<h2>No Prescribed test</h2>
+<br>
+{% endif %}
+
+</center>
+{% include 'sub_footer.html' %}
+{% include 'footer.html' %}

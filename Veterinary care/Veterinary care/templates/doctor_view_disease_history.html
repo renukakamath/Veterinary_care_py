@@ -1,0 +1,45 @@
+{% include 'doctor_header.html' %}
+{% include 'sub_header.html' %}
+<center>
+	{% if data['view']%}<br>
+	<h1 style="color: black">Pets Details</h1><br>
+	<form>
+		<table>
+			<tr>
+				<th style="color: black">User Name</th>
+				<td style="color: brown">{{data['view'][0]['uname']}}</td>
+			</tr>
+			<tr>
+				<th style="color: black">Phone</th>
+				<td style="color: brown">{{data['view'][0]['phone']}}</td>
+			</tr>
+			<tr>
+				<th style="color: black">Pet Name</th>
+				<td style="color: brown">{{data['view'][0]['name']}}</td>
+			</tr>
+			<tr>
+				<th style="color: black">Type</th>
+				<td style="color: brown">{{data['view'][0]['type']}}</td>
+			</tr>
+			<tr>
+				<th style="color: black">Breed</th>
+				<td style="color: brown">{{data['view'][0]['breed']}}</td>
+			</tr>
+			<tr>
+				<th style="color: black">Age</th>
+				<td style="color: brown">{{data['view'][0]['age']}}</td>
+			</tr>
+		</table><br>
+		<table>
+			<tr>
+				<td><a class="btn btn-warning" href="doctor_add_prescription?book_id={{data['view'][0]['book_id']}}">Add Prescription</a></td>
+				<td><a class="btn btn-warning" href="doctor_add_medical_notes?book_id={{data['view'][0]['book_id']}}">Add Disease Details</a></td>
+				<td><a class="btn btn-warning" href="doctor_lab_tests?book_id={{data['view'][0]['book_id']}}">Lab Tests</a></td>
+			</tr>
+		</table><br>
+	</div>
+	</form>
+	{% else %}<br><br><h1>No Disease History</h1><br><br>{% endif %}
+</center>
+{% include 'sub_footer.html' %}
+{% include 'footer.html' %}

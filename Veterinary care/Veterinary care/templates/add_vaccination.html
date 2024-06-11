@@ -1,0 +1,48 @@
+{% include 'admin_header.html' %}
+{% include 'sub_header.html' %}
+<table class="table" style="width: 500px;">
+    <h1>Add vaccination</h1>
+    <tr>
+        <th>vaccination</th>
+        <td><input type="text" class="form-control" name="vaccination" id=""></td>
+    </tr>
+    <tr>
+        <th>date</th>
+        <th><input type="date"  class="form-control"  name="date"></th>
+    </tr>
+    <tr>
+        <th>Amount</th>
+        <td><input type="text" class="form-control" name="amount" id=""></td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center"><input type="submit" class="btn btn-success" name="md_amount"  value="SEND" id=""></td>
+    </tr>
+</table>
+
+
+</center>
+
+    <h2>vaccination</h2><br>
+    <table class="table">
+        <tr>
+            <th>Sl.No</th>
+            <th>Vaccination</th>
+             <th>Amount</th>
+            <th>Date</th>
+
+            
+            <th>Status</th><th></th>
+        </tr>
+        {% for i in data['staff'] %}
+        <tr>
+            <td>{{loop.index}}</td>
+            <td>{{i['vaccination']}}</td>
+            <td>{{i['amount']}}</td>
+            <td>{{i['date']}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+</form>
+{% include 'sub_footer.html' %}
+{% include 'footer.html' %} 

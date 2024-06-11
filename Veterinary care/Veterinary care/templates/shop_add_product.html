@@ -1,0 +1,82 @@
+{% include 'shop_header.html' %}
+{% include 'sub_header.html' %}
+<center>
+	<h1 style="color: black">Manage Products</h1><br>
+	{% if data['view_update'] %}
+	<h3>Update details</h3><br>
+	<form method="post" enctype="multipart/form-data">
+		<table>
+			<tr>
+				<th>Product Name</th>
+				<td><input type="text" value="{{data['view_update'][0]['product']}}" class="form-control" pattern="[a-zA-Z0-9\s]{0,20}" name="pdt" required class="form-control"></td>
+			</tr>
+			<tr>
+				<th>Product amount</th>
+				<td><input type="text" value="{{data['view_update'][0]['amount']}}" class="form-control" pattern="[a-zA-Z0-9\s]{0,20}" name="amt" required class="form-control"></td>
+			</tr>
+			<tr>
+				<th>Product Quantity</th>
+				<td><input type="number" value="{{data['view_update'][0]['quantity']}}"  class="form-control"  name="qty" required class="form-control"></td>
+			</tr>
+			<tr><td><br></td></tr>
+			<tr>
+				<td colspan="2" align="center"><input type="submit" class="btn btn-info" name="update_submit" value="Update Test"></td>
+			</tr>
+		</table>
+	</form>
+	{% else %}
+	<form method="post" enctype="multipart/form-data">
+		<table>
+			<tr>
+				<th>Product Name</th>
+				<td><input type="text" class="form-control" pattern="[a-zA-Z0-9\s]{0,20}" name="pdt" required class="form-control"></td>
+			</tr>
+			<tr>
+				<th>Image</th>
+				<td><input type="file" required name="img" class="form-control"></td>
+			</tr>
+			<tr>
+				<th>Product amount</th>
+				<td><input type="text" class="form-control" pattern="[a-zA-Z0-9\s]{0,20}" name="amt" required class="form-control"></td>
+			</tr>
+			<tr>
+				<th>Product Quantity</th>
+				<td><input type="number" class="form-control"  name="qty" required class="form-control"></td>
+			</tr>
+			<tr><td><br></td></tr>
+			<tr>
+				<td colspan="2" align="center"><input type="submit" class="btn btn-info" name="submit" value="Add "></td>
+			</tr>
+		</table>
+	</form>
+{% endif %}
+{% if data['view'] %}
+<br><br>
+<h2>Product Details</h2><br>
+<table class='table'>
+	<tr>
+		<th>Sl.No</th>
+		<th>Product</th>
+		<th>amount</th>
+		<th>Quantity</th>
+		<th>Date</th>
+		<th></th><th></th>
+	</tr>
+	{% for i in data['view'] %}
+	<tr>
+		<td>{{loop.index}}</td>
+		<td>{{i['product']}}</td>
+		<td>{{i['amount']}}</td>
+		<td>{{i['quantity']}}</td>
+		<td>{{i['date']}}</td>
+		
+		<td><a class="btn btn-success" href="?action=update&id={{i['product_id']}}">Update</a>
+			<a class="btn btn-danger" href="?action=delete&id={{i['product_id']}}">Delete</a></td>
+	</tr>
+	{% endfor %}
+</table>
+{% endif %}
+
+</center>
+{% include 'sub_footer.html' %}
+{% include 'footer.html' %}

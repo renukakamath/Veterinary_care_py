@@ -1,0 +1,46 @@
+{% include 'laboratory_header.html' %}
+{% include 'sub_header.html' %}
+<center>
+{% if data['view'] %}<br>
+	<h1>Update Test Report</h1><br>
+<br>
+<h2>Test Details</h2><br>
+<form method="post">
+<table class=table>
+	<tr>
+		<th>Sl.No</th>
+		<th>Test Name</th>
+		<th>Text Rate</th>
+		<th>Patient Name</th>
+		<th>Doctor Description</th>
+		<th>Date Time</th>
+		<th>Lab Description</th>
+	</tr>
+	{% for i in data['view'] %}
+	<tr>
+		<td>{{loop.index}}</td>
+		<td>{{i['test_name']}}</td>
+		<td>{{i['rate']}}</td>
+		<td>{{i['user_name']}}</td>
+		<td>{{i['lab_pres_description']}}</td>
+		<td>{{i['date_time']}}</td>
+		<td>
+			{% if i['report_description']=='NA' %}
+			<textarea class="form-control" name="rd{{loop.index}}"></textarea>
+			<input type="hidden" name="test_pres_id{{loop.index}}" value="{{i['test_pres_id']}}">
+			<input type="hidden" name="test_rate{{loop.index}}" value="{{i['rate']}}">
+			<input type="hidden" name="book_id{{loop.index}}" value="{{i['book_id']}}">
+			<input class="btn btn-info" type="submit" name="submit{{loop.index}}" value="Update">
+			{% else %}
+			{{i['report_description']}}{% endif %}
+		</td>
+	</tr>
+	{% endfor %}
+</table>
+</form>
+{% else %}
+<br><h2>No Current Test Available</h2><br>
+{% endif %}
+</center>
+{% include 'sub_footer.html' %}
+{% include 'footer.html' %}

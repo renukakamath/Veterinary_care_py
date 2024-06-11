@@ -1,0 +1,60 @@
+{% include 'doctor_header.html' %}
+{% include 'sub_header.html' %}
+<center>
+	<style type="text/css">
+		th{
+			text-align: right;
+			color: darkblue
+		}
+		td{
+			color: maroon;
+		}
+	</style>
+	{% if data['view']%}
+	<br>
+	<h1 style="color: black">Patient Name : {{data['view'][0]['name']}}</h1><br>
+	<h2>Physical Condition</h2><br>
+	<form>
+		<table>
+			<tr>
+				<th>Gender :</th>
+				<td>{{data['view'][0]['gender']}}</td>
+			</tr>
+			<tr>
+				<th>Date of Birth :</th>
+				<td>{{data['view'][0]['dob']}}</td>
+			</tr>
+			<tr>
+				<th>Blood Group :</th>				
+				<td>{{data['view'][0]['blood_group']}}</td>
+			</tr>
+			<tr>
+				<th>Blood Pressure :</th>
+				<td>{{data['view'][0]['blood_pressure']}}</td>
+			</tr>
+			<tr>
+				<th>Diabetic :</th>
+				<td>{{data['view'][0]['sugar']}}</td>
+			</tr>
+			<tr>
+				<th>Cholesterol :</th>
+				<td>{{data['view'][0]['cholesterol']}}</td>
+			</tr>
+			<tr>
+				<th>Height :</th>
+				<td>{{data['view'][0]['height']}}</td>
+			</tr>
+			<tr>
+				<th>Weight :</th>
+				<td>{{data['view'][0]['weight']}}</td>
+			</tr>
+			<tr>
+				<th>Phone :</th>
+				<td>{{data['view'][0]['phone']}}</td>
+			</tr>
+		</table>
+	</form>
+	{% else %}<br><br><h1>No Patients</h1><br><br>{% endif %}
+</center>
+{% include 'sub_footer.html' %}
+{% include 'footer.html' %}

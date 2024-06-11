@@ -1,0 +1,35 @@
+{% include 'shop_header.html' %}
+{% include 'sub_header.html' %}
+<center>
+<br>
+{% if data['view'] %}
+<br>
+<h2>order Details</h2><br>
+<table class="table">
+	<tr>
+		<th>Sl.No</th>
+		<th>User Name</th>
+		<th>Product Name</th>
+		<th>Product amount</th>
+		
+		
+	</tr>
+	{% for i in data['view'] %}
+	<tr>
+		<td>{{loop.index}}</td>
+		<td>{{i['test_name']}}</td>
+		<td>{{i['product']}}</td>
+		<td>{{i['amount']}}</td>
+		
+	</tr>
+	{% endfor %}
+</table>
+{% else %}
+<br>
+<h2>No ordered </h2>
+<br>
+{% endif %}
+
+</center>
+{% include 'sub_footer.html' %}
+{% include 'footer.html' %}

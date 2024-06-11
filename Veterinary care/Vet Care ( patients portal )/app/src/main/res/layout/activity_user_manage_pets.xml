@@ -1,0 +1,116 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView1"
+    android:layout_width="match_parent"
+    android:background="@color/primary"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+
+        android:orientation="vertical" >
+
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Images"
+            android:textStyle="bold"
+
+            android:textColor="@color/black"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="40dp"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:text="Choose a File and Upload" />
+
+        <ImageButton
+            android:id="@+id/ibimage"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:layout_marginTop="10dp"
+            android:src="@android:drawable/btn_star" />
+
+        <EditText
+            android:id="@+id/etname"
+            android:hint="Enter Name"
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:padding="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColorHint="@color/hint"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/ettype"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/hint"
+            android:hint="Enter Type"
+            android:inputType="textPersonName"/>
+
+        <EditText
+            android:id="@+id/etbreed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/hint"
+            android:inputType="textPersonName"
+            android:hint="Enter Breed"/>
+
+        <EditText
+            android:id="@+id/etage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/hint"
+            android:inputType="textPersonName"
+            android:hint="Age"/>
+
+        <EditText
+            android:id="@+id/etothers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/hint"
+            android:inputType="textPersonName"
+            android:hint="Other Details"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btupim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/white"
+            android:textColor="@color/black"
+            android:layout_marginTop="15dp"
+            android:text="Send" />
+
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,48 @@
+{% include 'doctor_header.html' %}
+{% include 'sub_header.html' %}
+<center>
+	{% if data['view']%}<br>
+	<h1>Pets Details</h1>
+	<form><br><br>
+		<table class="table">
+			<tr>
+				<th>Sl.No</th>
+				<th>User Name</th>
+				<th>Phone</th>
+				<th>Email</th>
+				<th>Photo</th>
+				<th>Pet Name</th>
+				<th>Type</th>
+				<th>Breed</th>
+				<th>Age</th>
+				<th>License</th>
+				<th>Status</th>
+				<th>Disease</th>
+			</tr>
+			{% for i in data['view'] %}
+			<tr>
+				<td>{{loop.index}}</td>
+				<td>{{i['uname']}}</td>
+				<td>{{i['phone']}}</td>
+				<td>{{i['email']}}</td>
+				<td><img src="/{{i['image']}}" width="100" width="100"></td>
+				<td>{{i['name']}}</td>
+				<td>{{i['type']}}</td>
+				<td>{{i['breed']}}</td>
+				<td>{{i['age']}}</td>
+				<td><img src="/{{i['license']}}" width="100" width="100"></td>
+				{%if i['status']=="Paid"%}
+				<td><a href="?action=accept&id={{i['book_id']}}">Accept</a></td>
+				<td><a href="?action=reject&id={{i['book_id']}}">Reject</a></td>
+				{%else%}
+				<td>{{i['status']}}</td>
+				<td>{{i['Diseases']}}</td>
+				{%endif%}
+			</tr>
+			{% endfor %}
+		</table>
+	</form>
+	{% else %}<br><br><h1>No Pets</h1><br><br>{% endif %}
+</center>
+{% include 'sub_footer.html' %}
+{% include 'footer.html' %}

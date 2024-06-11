@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/primary"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".User_registration">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primary"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Registration"
+                android:layout_gravity="center"
+                android:layout_marginTop="35dp"
+                android:textSize="30dp"
+                android:textStyle="bold|italic"
+                android:textColor="@color/black"
+                />
+
+    <EditText
+        android:id="@+id/etfirst"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textColor="#000"
+        android:textColorHint="#878787"
+        android:hint="First Name"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etlast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textColor="#000"
+        android:textColorHint="#878787"
+        android:layout_marginTop="10dp"
+        android:hint="Last Name"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etphone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:digits="0123456789"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textColor="#000"
+        android:textColorHint="#878787"
+        android:layout_marginTop="10dp"
+        android:hint="Phone Number"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/etemail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textColor="#000"
+        android:textColorHint="#878787"
+        android:layout_marginTop="10dp"
+        android:hint="Email-id"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/ethname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textColor="#000"
+        android:textColorHint="#878787"
+        android:layout_marginTop="10dp"
+        android:hint="House Name"
+        android:gravity="start|top"
+        android:inputType="textMultiLine" />
+    <EditText
+        android:id="@+id/etplace"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textColor="#000"
+        android:textColorHint="#878787"
+        android:layout_marginTop="10dp"
+        android:hint="Place"
+        android:inputType="textPersonName" />
+
+
+    <EditText
+        android:id="@+id/etland"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textColor="#000"
+        android:textColorHint="#878787"
+        android:layout_marginTop="10dp"
+        android:hint="Landmark"
+        android:inputType="textPersonName" />
+
+
+
+    <EditText
+        android:id="@+id/etusername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Username"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textColor="#000"
+        android:textColorHint="#878787"
+        android:layout_marginTop="10dp"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etpassw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textColor="#000"
+        android:textColorHint="#878787"
+        android:layout_marginTop="10dp"
+        android:hint="Password"
+        android:inputType="textPersonName" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btreg"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:background="@color/white"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:text="Register" />
+
+ </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

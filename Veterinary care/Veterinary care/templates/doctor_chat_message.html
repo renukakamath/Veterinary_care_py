@@ -1,0 +1,40 @@
+{% include 'doctor_header.html' %}
+{% include 'sub_header.html' %}
+<center>
+	
+<br></div>
+<form method="post">
+	<div style="height:300px; width:700px; overflow-y: scroll;">
+<table>
+	{% for row in data['msg'] %}
+	{% if row['sender_id']==session['lid'] and row['sender_type']=='doctor' %}
+	<tr>
+		<td></td>
+		<td>
+			<input class="btn btn-primary" type="text" class="form-control" name="message" value="{{row['message']}}"></td>
+	</tr>
+	{% else %}
+	<tr>
+		<td><input class="btn btn-info" type="text" class="form-control" name="message" value="{{row['message']}}"></td>
+		<td></td>
+	</tr>
+	{% endif %}
+	{% endfor %}
+	<tr><td><br></td></tr>
+</table>
+</div>
+<table>
+	<tr>
+		<td>
+			<input type="text" style="border-color: blue" class="form-control" name="msg" >
+		</td>
+		<td align="center">
+			<input type="submit" name="submit" class="btn btn-success" value="Send Message">
+		</td>
+	</tr>
+	<tr><td><br></td></tr>
+</table>
+</form>
+</center>
+{% include 'sub_footer.html' %}
+{% include'footer.html' %}

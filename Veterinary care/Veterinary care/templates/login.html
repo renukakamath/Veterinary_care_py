@@ -1,0 +1,31 @@
+{% include 'home_header.html' %}
+<div style="background:url('/static/images/ab.jpg') ;height: 100%; width: 100%; background-size: cover;">
+<section class="site-section">
+      <div class="container">
+        <div class="row justify-content-center" data-aos="fade-up">
+          <div class="col-lg-6 text-center heading-section mb-5">
+            <div class="jumbotron">
+            <h2>Login to Pet Care<span class="text-primary">.</span></h2>
+            <form method="post" action="" enctype="multipart/form-data" >
+              <table class="table">
+                <tr width="500">
+                  <td>Username:</td>
+                  <td><input type="text" class="form-control" name="uname"></td>
+                </tr>
+                <tr>
+                  <td>Password:</td>
+                  <td><input type="password" class="form-control" name="passs"></td>
+                </tr>
+                <tr>
+                  <td colspan="2" align="center"><input type="submit" class="btn btn-success" name="submit" value="Login"></td>
+                </tr> 
+              </table>
+            </form>
+          </div>
+          </div>
+          </div>
+        </div>
+      </div>
+</section>
+
+{% include 'footer.html' %}

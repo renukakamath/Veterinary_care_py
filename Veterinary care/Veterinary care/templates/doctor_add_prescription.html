@@ -1,0 +1,67 @@
+{% include 'doctor_header.html' %}
+{% include 'sub_header.html' %}
+<center>
+<h1 style="color: black">Add Medicine Prescription</h1>
+	{% if data['view']%}
+	<form method="post">
+		<table>
+			<tr>
+				<th style="text-align: right">User Name :</th>
+				<td style="color: brown">{{data['view'][0]['name']}}</td>
+			</tr>
+			<tr>
+				<th style="text-align: right">Phone :</th>
+				<td style="color: brown">+91&nbsp;{{data['view'][0]['phone']}}</td>
+			</tr>
+			<tr>
+				<th style="text-align: right">Pet Name :</th>
+				<td style="color: brown">+91&nbsp;{{data['view'][0]['name']}} - {{data['view'][0]['breed']}}</td>
+			</tr>
+		</table><br>
+		<div class="jumbotron">
+		<table>
+			<tr>
+				<th>Choose Medicine:</th>
+				<td>
+					<select pattern="[a-zA-Z0-9\s]" class="form-control" name="med_id">
+					{% for i in data['med'] %}
+						<option value="{{i['medicine_id']}}">{{i['medicine_name']}}</option>
+					{% endfor %}
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th>Medicine Description:</th>
+				<th><textarea pattern="[a-zA-Z0-9\s]" class="form-control" name="desc"></textarea></th>
+			</tr>
+			<tr><td><br></td></tr>
+			<tr>
+				<td colspan="2" align="center"><input class="btn btn-primary" type="submit" name="submit" value="Add"></td>
+			</tr>
+		</table></div>
+		{% if data['viewdet'] %}
+		<h3>Prescription history</h3>
+		<div style="height:200px; width: 500px; overflow-y: scroll;">
+		<table class="table">
+			<tr>
+				<th>Sl.No</th>
+				<th>Medicine</th>
+				<th>Decsiption</th>
+				<th>Date</th>
+			</tr>
+			{% for i in data['viewdet'] %}
+			<tr>
+				<td>{{loop.index}}</td>
+				<td>{{i['medicine_name']}}</td>
+				<td>{{i['med_pres_description']}}</td>
+				<td>{{i['date_time']}}</td>
+				
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+	</form>{% endif %}
+	{% else %}<br><br><h1>No Medicine Prescription</h1><br><br>{% endif %}
+</center>
+{% include 'sub_footer.html' %}
+{% include 'footer.html' %}

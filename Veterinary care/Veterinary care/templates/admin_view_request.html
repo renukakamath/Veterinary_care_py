@@ -1,0 +1,41 @@
+{% include 'admin_header.html' %}
+{% include 'sub_header.html' %}
+<div style="background-image: url('/static/images/abc.jpg');height: 300px"></div>
+<center>
+	{% if data['view']%}<br><br>
+	<h1>User Request Details</h1><br>
+	<form>
+		<table class="table">
+			<tr>
+				<th>Sl.No</th>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Breed</th>
+				<th>Age</th>
+				<th>Other Details</th>
+				<th>Status</th>
+			</tr>
+			{% for i in data['view'] %}
+			<tr>
+				<td>{{loop.index}}</td>
+				<td>{{i['name']}}</td>
+				<td>{{i['type']}}</td>
+				<td>{{i['breed']}}</td>
+				<td>{{i['age']}}</td>
+				<td>{{i['other_details']}}</td>
+				{%if i['status']=="pending"%}
+				<td><a href="admin_assign?id={{i['pets_id']}}&rid={{i['request_id']}}" class="btn btn-danger">Assign staff</a></td>
+				{%else%}
+				<td>{{i['status']}}</td>
+				{%endif%}
+								
+				
+
+			</tr>
+			{% endfor %}
+		</table>
+	</form>
+	{% else %}<br><br><h1>No Request Details</h1><br><br>{% endif %}
+</center>
+{% include 'sub_footer.html' %}
+{% include 'footer.html' %}

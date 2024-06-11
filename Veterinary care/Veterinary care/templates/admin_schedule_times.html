@@ -1,0 +1,29 @@
+
+{% include 'admin_header.html' %}
+{% include 'sub_header.html' %}
+
+	<h2>Schedule Details</h2><br>
+	<table class="table">
+		<tr>
+			<th>Sl.No</th>
+			<th>Doctor Name</th>
+			<th>Date</th>
+			<th>Starting Time</th>
+			<th>Ending Time</th>
+			<th>Fee</th><th></th>
+		</tr>
+		{% for i in data['view'] %}
+		<tr>
+			<td>{{loop.index}}</td>
+			<td>{{i['doctor_name']}}</td>
+			<td>{{i['date']}}</td>
+			<td>{{i['start_time']}}</td>
+			<td>{{i['end_time']}}</td>
+			<td>{{i['fee_amount']}}</td>
+		
+		</tr>
+		{% endfor %}
+	</table>
+</center>
+{% include 'sub_footer.html' %}
+{% include 'footer.html' %}

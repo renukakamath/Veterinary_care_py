@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary"
+    android:orientation="vertical"
+    tools:context=".User_view_medical_history">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Meidcal History"
+        android:layout_gravity="center"
+        android:layout_marginTop="35dp"
+        android:textSize="30dp"
+        android:layout_marginBottom="30dp"
+        android:textStyle="bold|italic"
+        android:textColor="@color/black"
+        />
+    <ListView
+        android:id="@+id/lvhistory"
+        android:dividerHeight="6dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

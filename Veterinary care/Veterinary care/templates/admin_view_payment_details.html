@@ -1,0 +1,31 @@
+{% include 'admin_header.html' %}
+{% include 'sub_header.html' %}
+<center>
+	{% if data['view']%}<br><br>
+	<h1>Payment Details</h1><br>
+	<form>
+		<table class="table">
+			<tr>
+				<th>Sl.No</th>
+				<th>Name</th>
+				<th>Phone</th>
+				<th>Amount</th>
+				<th>Purpose</th>
+				<th>Payment Date</th>
+			</tr>
+			{% for i in data['view'] %}
+			<tr>
+				<td>{{loop.index}}</td>
+				<td>{{i['name']}}</td>
+				<td>{{i['phone']}}</td>
+				<td>{{i['amount']}}</td>
+				<td>{{i['payment_type']}}</td>
+				<td>{{i['payment_date']}}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</form>
+	{% else %}<br><br><h1>No Payment Details</h1><br><br>{% endif %}
+</center>
+{% include 'sub_footer.html' %}
+{% include 'footer.html' %}

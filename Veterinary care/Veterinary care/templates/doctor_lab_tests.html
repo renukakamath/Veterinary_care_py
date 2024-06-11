@@ -1,0 +1,66 @@
+{% include 'doctor_header.html' %}
+{% include 'sub_header.html' %}
+<center>
+<h1 style="color: black">Add Lab Tests Prescription</h1>
+	{% if data['view']%}
+	<form method="post">
+		<table>
+			<tr>
+				<th style="text-align: right">User Name :</th>
+				<td style="color: black">{{data['view'][0]['uname']}}</td>
+			</tr>
+			<tr>
+				<th style="text-align: right">Phone :</th>
+				<td style="color: black">+91&nbsp;{{data['view'][0]['phone']}}</td>
+			</tr>
+			<tr>
+				<th style="text-align: right">Pet Name :</th>
+				<td style="color: black">+91&nbsp;{{data['view'][0]['name']}} - {{data['view'][0]['breed']}}</td>
+			</tr>
+		</table><br>
+		<div class="jumbotron">
+		<table>
+			<tr>
+				<th>Choose Test:</th>
+				<td>
+					<select pattern="[a-zA-Z0-9\s]" class="form-control" name="lab_test_id">
+					{% for i in data['lab'] %}
+						<option value="{{i['lab_test_id']}}">{{i['test_name']}}</option>
+					{% endfor %}
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th>Test Description:</th>
+				<th><textarea pattern="[a-zA-Z0-9\s]" class="form-control" name="desc"></textarea></th>
+			</tr>
+			<tr><td><br></td></tr>
+			<tr>
+				<td colspan="2" align="center"><input class="btn btn-primary" type="submit" name="submit" value="Add"></td>
+			</tr>
+		</table></div>
+		{% if data['viewdet'] %}<br>
+		<h3>Pending Test</h3><br>
+		<div style="height:150px; width: 500px; overflow-y: scroll;">
+		<table class=table>
+			<tr>
+				<th>Sl.No</th>
+				<th>Medicine</th>
+				<th>Decsiption</th>
+				<th>Date</th>
+			</tr>
+			{% for i in data['viewdet'] %}
+			<tr>
+				<td>{{loop.index}}</td>
+				<td>{{i['test_name']}}</td>
+				<td>{{i['lab_pres_description']}}</td>
+				<td>{{i['date_time']}}</td>
+			</tr>
+			{% endfor %}
+		</table><br>
+	</div><br><a href="doctor_prev?book_id={{data['view'][0]['book_id']}}"><h2 style="color: orange">View Previous Lab Results</h2></a>
+	</form>{% endif %}
+	{% else %}<br><br><h1>No Lab Tests Prescription</h1><br><br>{% endif %}
+</center>
+{% include 'sub_footer.html' %}
+{% include'footer.html' %}

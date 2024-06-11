@@ -1,0 +1,36 @@
+{% include 'staff_header.html' %}
+{% include 'sub_header.html' %}
+
+<center>
+	<h2>Assign Details</h2><br>
+	<table class="table">
+		<tr>
+			<th>Sl.No</th>
+			<th>Pet Name</th>
+			<th>Type</th>
+			<th>Breed</th>
+			<th>Age</th>
+			<th>Date</th>
+			
+			<th>Status</th><th></th>
+		</tr>
+		{% for i in data['staff'] %}
+		<tr>
+			<td>{{loop.index}}</td>
+			<td>{{i['name']}} </td>
+			<td>{{i['type']}}</td>
+			<td>{{i['breed']}}</td>
+			<td>{{i['age']}}</td>
+			<td>{{i['date']}}</td>
+			{%if i ['status']=="pending"%}
+			<td><a href="?action=accept&id={{i['assign_id']}}" class="btn btn-success">Accept</a></td>
+			<td><a href="?action=reject&id={{i['assign_id']}}" class="btn btn-danger">Reject</a></td>
+			{%else%}
+			<td>{{i['status']}}</td>
+			{%endif%}
+		</tr>
+		{% endfor %}
+	</table>
+</center>
+{% include 'sub_footer.html' %}
+{% include 'footer.html' %}

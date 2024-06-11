@@ -1,0 +1,36 @@
+{% include 'admin_header.html' %}
+{% include 'sub_header.html' %}
+<div style="background-image: url('/static/images/abc.jpg');height: 300px"></div>
+<center>
+
+	<h1>View Bookings</h1><br>
+	<form>
+		<table class="table">
+			<tr>
+				<th>Sl.No</th>
+				<th>first name</th>
+				<th>date time</th>
+				<th>status</th>
+				<th>start time</th>
+				<th>fee amount</th>
+				
+			</tr>
+			{% for i in data['admin_viewbookings'] %}
+			<tr>
+				<td>{{loop.index}}</td>
+				<td>{{i['first_name']}}</td>
+				<td>{{i['date_time']}}</td>
+				<td>{{i['status']}}</td>
+				<td>{{i['start_time']}}</td>
+				<td>{{i['fee_amount']}}</td>
+				<td><a href="admin_view_payment_details?book_id={{i['book_id']}}">View Payment</a></td>
+				
+
+			</tr>
+			{% endfor %}
+		</table>
+	</form>
+	
+</center>
+{% include 'sub_footer.html' %}
+{% include 'footer.html' %}

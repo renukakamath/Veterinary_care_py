@@ -1,0 +1,32 @@
+{% include 'doctor_header.html' %}
+{% include 'sub_header.html' %}
+<div style="background:url('/static/images/farmer1.jpg') ;height: 100%; width: 100%; background-size: cover;">
+<center>
+	<h1>Disease History</h1><br>
+{% if data['msgs'] %}<br>
+
+<table class="table">
+	<tr>
+		<th>Sl.No</th>
+		<th>User Name</th>
+		<th>Pet Name</th>
+		<td></td>
+	</tr>
+	{% for row in data['msgs'] %}
+	<tr>
+		<td>{{ loop.index }}</td>
+		<td>{{ row['uname'] }}</td>
+		<td>{{ row['name'] }}</td>
+		<td><a class="btn btn-info" href="doctor_view_disease_history?cid={{row['user_id']}}">Disease History</a></td>
+	</tr>
+	{% endfor %}
+</table>
+</div>
+{% else %}
+<br>
+<h3>You don't have Pet History yet</h3>
+<br>
+{% endif %}
+</center>
+{% include 'sub_footer.html' %}
+{% include 'footer.html' %}

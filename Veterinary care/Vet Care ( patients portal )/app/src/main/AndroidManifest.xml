@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.patient_portal">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/p1"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="false"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Patient_portal"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".Productbooking"
+            android:exported="false" />
+        <activity
+            android:name=".Viewproducts"
+            android:exported="false" />
+        <activity
+            android:name=".Ratings"
+            android:exported="false" />
+        <activity
+            android:name=".Viewstaffbooking"
+            android:exported="false" />
+        <activity
+            android:name=".Userviewstaff"
+            android:exported="false" />
+        <activity
+            android:name=".Usermakepayment"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Viewvaccinebooking"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Userbookvaccination"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".userViewResult"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity android:name=".User_pet_book_doctor" />
+        <activity android:name=".User_view_pets" />
+        <activity android:name=".User_manage_pets" />
+        <activity android:name=".User_test_payment" />
+        <activity android:name=".User_view_test_pres" />
+        <activity android:name=".IPSetting">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".User_payment" />
+        <activity android:name=".ChatHere" />
+        <activity android:name=".User_view_med_pres" />
+        <activity android:name=".User_view_medical_history" />
+        <activity android:name=".User_view_bookings" />
+        <activity android:name=".User_book_doctor" />
+
+        <service android:name=".LocationService" />
+
+        <activity android:name=".User_view_schedule" />
+        <activity android:name=".User_view_doctors" />
+        <activity android:name=".Users_home" />
+        <activity android:name=".User_registration" />
+        <activity android:name=".Login" />
+        <activity android:name=".MainActivity" />
+    </application>
+
+</manifest>
